@@ -64,12 +64,6 @@ namespace Intel8086Emulator
             }
         }
 
-        // public string AX { get; set; }
-        // public string BX { get; set; }
-        // public string CX { get; set; }
-        // public string DX { get; set; }
-
-
         public MainWindow()
         {
             DataContext = this;
@@ -101,34 +95,122 @@ namespace Intel8086Emulator
                 this.AX = this.AX;
             if (first == "AX" && second == "BX")
                 this.AX = this.BX;
-            else if (first == "AX" && second == "CX")
+            if (first == "AX" && second == "CX")
                 this.AX = this.CX;
-            else if (first == "AX" && second == "DX")
+            if (first == "AX" && second == "DX")
                 this.AX = this.DX;
-            else if (first == "BX" && second == "AX")
+            if (first == "BX" && second == "AX")
                 this.BX = this.AX;
-            else if (first == "BX" && second == "BX")
+            if (first == "BX" && second == "BX")
                 this.BX = this.BX;
-            else if (first == "BX" && second == "CX")
+            if (first == "BX" && second == "CX")
                 this.BX = this.CX;
-            else if (first == "BX" && second == "DX")
+            if (first == "BX" && second == "DX")
                 this.BX = this.DX;
-            else if (first == "CX" && second == "AX")
+            if (first == "CX" && second == "AX")
                 this.CX = this.AX;
-            else if (first == "CX" && second == "BX")
+            if (first == "CX" && second == "BX")
                 this.CX = this.BX;
-            else if (first == "CX" && second == "CX")
+            if (first == "CX" && second == "CX")
                 this.CX = this.CX;
-            else if (first == "CX" && second == "DX")
+            if (first == "CX" && second == "DX")
                 this.CX = this.DX;
-            else if (first == "DX" && second == "AX")
+            if (first == "DX" && second == "AX")
                 this.DX = this.AX;
-            else if (first == "DX" && second == "BX")
+            if (first == "DX" && second == "BX")
                 this.DX = this.BX;
-            else if (first == "DX" && second == "CX")
+            if (first == "DX" && second == "CX")
                 this.DX = this.CX;
-            else if (first == "DX" && second == "DX")
+            if (first == "DX" && second == "DX")
                 this.DX = this.DX;
+        }
+
+        private void Button_xchg_OnClick(object sender, RoutedEventArgs e)
+        {
+            string third = ComboBoxThird.Text.ToUpper();
+            string fourth = ComboBoxFourth.Text.ToUpper();
+            string temp = "";
+
+            if (third == "AX" && fourth == "AX")
+                this.AX = this.AX;
+            if (third == "AX" && fourth == "BX")
+            {
+                temp = this.AX;
+                this.AX = this.BX;
+                this.BX = temp;
+            }
+            if (third == "AX" && fourth == "CX")
+            {
+                temp = this.AX;
+                this.AX = this.CX;
+                this.CX = temp;
+            }
+            if (third == "AX" && fourth == "DX")
+            {
+                temp = this.AX;
+                this.AX = this.DX;
+                this.DX = temp;
+            }
+            if (third == "BX" && fourth == "BX")
+                this.BX = this.BX;
+            if (third == "BX" && fourth == "AX")
+            {
+                temp = this.BX;
+                this.BX = this.AX;
+                this.AX = temp;
+            }
+            if (third == "BX" && fourth == "CX")
+            {
+                temp = this.BX;
+                this.BX = this.CX;
+                this.CX = temp;
+            }
+            if (third == "BX" && fourth == "DX")
+            {
+                temp = this.BX;
+                this.BX = this.DX;
+                this.DX = temp;
+            }
+            if (third == "CX" && fourth == "CX")
+                this.CX = this.CX;
+            if (third == "CX" && fourth == "AX")
+            {
+                temp = this.CX;
+                this.CX = this.AX;
+                this.AX = temp;
+            }
+            if (third == "CX" && fourth == "BX")
+            {
+                temp = this.CX;
+                this.CX = this.BX;
+                this.BX = temp;
+            }
+            if (third == "CX" && fourth == "DX")
+            {
+                temp = this.CX;
+                this.CX = this.DX;
+                this.DX = temp;
+            }
+            if (third == "DX" && fourth == "DX")
+                this.DX = this.DX;
+            if (third == "DX" && fourth == "AX")
+            {
+                temp = this.DX;
+                this.DX = this.AX;
+                this.AX = temp;
+            }
+            if (third == "DX" && fourth == "BX")
+            {
+                temp = this.DX;
+                this.DX = this.BX;
+                this.BX = temp;
+            }
+            if (third == "DX" && fourth == "CX")
+            {
+                temp = this.DX;
+                this.DX = this.CX;
+                this.CX = temp;
+            }
         }
     }
 }
